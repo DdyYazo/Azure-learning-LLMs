@@ -16,6 +16,12 @@
   - [1.2. **¿Cómo implementar MCP en tus proyectos?**](#12-cómo-implementar-mcp-en-tus-proyectos)
   - [1.3. **Funcionalidades avanzadas del protocolo**](#13-funcionalidades-avanzadas-del-protocolo)
   - [1.4. **¿Por qué aprender MCP cambia tu rol como desarrollador?**](#14-por-qué-aprender-mcp-cambia-tu-rol-como-desarrollador)
+- [2. **Componentes esenciales del protocolo MCP: servidor, cliente y host**](#2-componentes-esenciales-del-protocolo-mcp-servidor-cliente-y-host)
+  - [2.1. **¿Qué es un servidor `"El cerebro del sistema"` y cuál es su función en MCP?**](#21-qué-es-un-servidor-el-cerebro-del-sistema-y-cuál-es-su-función-en-mcp)
+    - [2.1.1. **Elementos clave del servidor en MCP**](#211-elementos-clave-del-servidor-en-mcp)
+  - [2.2. **¿Cómo interactúan cliente `"El traductor intermedio"` y host `"La pantalla donde ves todo"` con el servidor en MCP?**](#22-cómo-interactúan-cliente-el-traductor-intermedio-y-host-la-pantalla-donde-ves-todo-con-el-servidor-en-mcp)
+  - [2.3. **¿Cuál es el flujo detallado de información dentro del MCP?**](#23-cuál-es-el-flujo-detallado-de-información-dentro-del-mcp)
+  - [2.4. **Explicacion puntual de los conceptos**](#24-explicacion-puntual-de-los-conceptos)
 
 # 1. **Introducción a MCP**
 
@@ -87,3 +93,81 @@ Los productos más innovadores de los próximos años no se construirán únicam
 
 ---
 
+# 2. **Componentes esenciales del protocolo MCP: servidor, cliente y host**
+
+El protocolo **MCP** comprende varios conceptos imprescindibles que, al dominarlos, facilitan enormemente la programación en cualquier lenguaje deseado. Conocer estos principios permite gestionar sin dificultad cualquier implementación relacionada con **MCP**.
+
+<p align="center">
+  <img src="https://i.postimg.cc/3RtKV98z/Screenshot-2026-03-02-220745.png" alt="" width="450">
+</p>
+<p align="center">
+  <span align="center"><strong>Componentes del protocolo MCP: cliente, servidor y host</strong></span>
+</p>
+</br>
+
+## 2.1. **¿Qué es un servidor `"El cerebro del sistema"` y cuál es su función en MCP?**
+
+El **servidor** es un componente fundamental en el protocolo **MCP**. Su rol principal es integrar todas las piezas que se quieran gestionar en **MCP**. Funciona recibiendo solicitudes y generando respuestas usando diferentes fuentes de información:
+
+### 2.1.1. **Elementos clave del servidor en MCP**
+
+- **Información contextual**: obtenida mediante conversaciones o interacción con algún **LLM**.
+- **Fuentes de conocimiento externas**: documentos y enlaces externos.
+- **Archivos locales**: interacciones específicas con archivos almacenados localmente.
+- **APIs o servicios web**: comunicación con servicios externos para extraer información.
+
+<p align="center">
+  <img src="https://i.postimg.cc/Znqq52sr/imagen-2026-03-02-221103195.png" alt="" width="450">
+</p>
+<p align="center">
+  <span align="center"><strong>Elementos clave del servidor en MCP</strong></span>
+</p>
+</br>
+
+> [!NOTE]
+>
+> El **servidor** actúa como el núcleo inteligente del protocolo: centraliza y coordina las cuatro fuentes de información para generar respuestas contextualizadas.
+
+## 2.2. **¿Cómo interactúan cliente `"El traductor intermedio"` y host `"La pantalla donde ves todo"` con el servidor en MCP?**
+
+1. El **cliente** recibe y estructura las respuestas del **servidor** para presentarlas de forma clara y comprensible. Primero recibe la pregunta del usuario, la procesa y realiza una petición apropiada al **servidor**. Luego recibe su respuesta y la transforma a un formato amigable.
+
+2. El **host** es la interfaz que permite la interacción directa de los usuarios con **MCP**. Es el elemento final donde el **cliente** presenta la información procesada. Ejemplos comunes de **host** incluyen aplicaciones y entornos de desarrollo integrados como **VS Code**, **Visual Studio** o **Eclipse**.
+
+
+## 2.3. **¿Cuál es el flujo detallado de información dentro del MCP?**
+
+El flujo de información inicia con una pregunta del usuario específica al contexto del **MCP** activo. 
+- El **cliente** procesa la pregunta, 
+- Transfiere la solicitud al **servidor**
+- Este utiliza de manera autónoma las cuatro fuentes de información para generar una respuesta adecuada. 
+- Luego el **cliente** estructura la respuesta y la transfiere al **host** para su presentación final.
+
+<p align="center">
+  <img src="https://i.postimg.cc/J03SSz5Q/imagen-2026-03-02-221955799.png" alt="" width="450">
+</p>
+<p align="center">
+  <span align="center"><strong>Representacion del flujo de información dentro del protocolo MCP</strong></span>
+</p>
+</br>
+
+Este flujo se resume en los siguientes pasos:
+
+1. El usuario formula la pregunta en función del contexto del **MCP**.
+2. El **cliente** interpreta la pregunta y solicita información al **servidor**.
+3. El **servidor** analiza las fuentes de información disponibles y genera una respuesta.
+4. El **cliente** reorganiza esa respuesta de manera organizada y clara.
+5. El **host** presenta la información procesada al usuario.
+
+## 2.4. **Explicacion puntual de los conceptos**
+
+
+<p align="center">
+  <img src="https://i.postimg.cc/xCvg3Jcj/imagen-2026-03-24-212216677.png" alt="" width="450">
+</p>
+<p align="center">
+  <span align="center"><strong>Definicion puntual de los conceptos del protocolo MCP</strong></span>
+</p>
+</br>
+
+---
